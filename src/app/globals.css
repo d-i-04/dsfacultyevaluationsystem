@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-sand text-ink antialiased;
+}
+
+/* ── Background patterns ─────────────────────────────── */
+
+.dashboard-bg {
+  background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 10%, rgba(129, 140, 248, 0.10), transparent 30%),
+    radial-gradient(circle at 60% 80%, rgba(14, 165, 233, 0.08), transparent 30%),
+    #0b1120;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #0b1120 0%, #1e1b4b 50%, #0f172a 100%);
+}
+
+/* ── Layout shells ───────────────────────────────────── */
+
+.section-shell {
+  @apply max-w-6xl mx-auto px-5 py-8;
+}
+
+/* ── Cards ───────────────────────────────────────────── */
+
+.card {
+  @apply rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-shadow duration-200;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.glass {
+  @apply border-white/20 bg-white/[0.07] shadow-lg shadow-black/10 backdrop-blur-xl;
+}
+
+.glass:hover {
+  @apply bg-white/[0.10];
+}
+
+.card-header {
+  @apply flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 px-6 py-4;
+}
+
+.card-body {
+  @apply px-6 py-5 space-y-4;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm
+    transition-all duration-200 hover:bg-accent-light hover:shadow-glow active:scale-[0.97];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-ink shadow-sm
+    transition-all duration-200 hover:border-accent hover:text-accent active:scale-[0.97];
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-2.5 text-sm font-semibold text-white/80
+    transition-all duration-200 hover:bg-white/10 hover:text-white;
+}
+
+.btn-danger {
+  @apply inline-flex items-center justify-center rounded-xl bg-rose-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm
+    transition-all duration-200 hover:bg-rose-500 active:scale-[0.97];
+}
+
+/* ── Badge / Pills ───────────────────────────────────── */
+
+.badge {
+  @apply inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-accent;
+}
+
+.pill {
+  @apply inline-flex items-center rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600;
+}
+
+/* ── Stat cards ──────────────────────────────────────── */
+
+.stat-card {
+  @apply rounded-2xl border border-white/10 bg-white/[0.06] shadow-lg backdrop-blur-lg transition-all duration-200;
+}
+
+.stat-card:hover {
+  @apply bg-white/[0.10] border-white/20;
+}
+
+/* ── Forms ────────────────────────────────────────────── */
+
+.input {
+  @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-800 shadow-sm
+    transition-all duration-200 placeholder:text-slate-400
+    focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none;
+}
+
+select.input, select {
+  @apply rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-800 shadow-sm
+    transition-all duration-200
+    focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none;
+}
+
+textarea {
+  @apply rounded-xl !important;
+}
+
+/* ── Chrome ───────────────────────────────────────────── */
+
+.sidebar {
+  @apply hidden h-screen w-64 flex-shrink-0 border-r border-white/[0.06] bg-slate-950 lg:block;
+}
+
+.topbar {
+  @apply sticky top-0 z-10 flex items-center gap-4 border-b border-white/[0.06] bg-slate-950/80 px-6 py-3 backdrop-blur-xl;
+}
+
+/* ── Tables ───────────────────────────────────────────── */
+
+.table {
+  @apply w-full border-collapse text-sm;
+}
+
+.table thead {
+  @apply text-left text-xs font-medium uppercase tracking-wider text-slate-400;
+}
+
+.table thead th {
+  @apply bg-slate-50/80 px-4 py-3 first:rounded-tl-lg last:rounded-tr-lg;
+}
+
+.table th,
+.table td {
+  @apply px-4 py-3 border-b border-slate-100/80 align-middle;
+}
+
+.table tbody tr {
+  @apply transition-colors duration-150 hover:bg-slate-50/60;
+}
+
+/* ── Utility ──────────────────────────────────────────── */
+
+.gradient-text {
+  @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
