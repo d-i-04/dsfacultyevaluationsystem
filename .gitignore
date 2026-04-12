@@ -1,0 +1,7 @@
+/.next
+/.next
+/node_modules
+.env.local
+/.next
+node_modules/@eslint-community/regexpp/index.js
+/node_modules
